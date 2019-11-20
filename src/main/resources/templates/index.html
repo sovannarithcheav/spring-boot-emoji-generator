@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+    <link rel="shortcut icon" type="image/png" href="https://i.imgur.com/IarwFXz.png" >
+    <link href="webjars/bootstrap/4.2.1/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <form name="shortenForm">
+        <div class="row">
+            <img width="128" height="128" src="/img/fox.png" alt="fox"/>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="link">Input your link:</label>
+                    <input class="form-control" id="link" onkeyup="myFunction()">
+                </div>
+            </div>
+        </div>
+        <button type="button" id="btn-shorten" onclick="doShorten()" class="btn btn-secondary">Shorten</button>
+    </form>
+
+</div>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="webjars/popper.js/1.14.3/umd/popper.js"></script>
+<script type="text/javascript">
+    function myFunction() {
+        var copyText = document.getElementById("copy-input");
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+    }
+</script>
+</body>
+</html>
